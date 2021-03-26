@@ -7,8 +7,7 @@ class AdapterFactory{
 
     constructor(type: DatabaseType){
         this.type = type;
-    }
-    
+    } 
     createAdapter(){
             if (this.type === DatabaseType.MYSQL2) {
 
@@ -25,7 +24,6 @@ class AdapterFactory{
             }
     }
 
-    
 }
 
 export default AdapterFactory;

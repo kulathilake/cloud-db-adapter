@@ -3,9 +3,8 @@ import { DynamoDBConfig } from "../types/ConfigurationTypes";
 
 export class DynamoDbAdapter implements AdapterInterface{
     client: any;
-    
     constructor(config:DynamoDBConfig){
-
+        // TODO
     }
 
     readOne() {
@@ -35,6 +34,4 @@ export class DynamoDbAdapter implements AdapterInterface{
     getClient() {
         throw new Error("Method not implemented.");
     }
-
-    
 }
