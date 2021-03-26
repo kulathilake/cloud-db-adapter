@@ -2,9 +2,12 @@ import { AdapterInterface } from "../interfaces/AdapterInterface";
 import { DynamoDBConfig } from "../types/ConfigurationTypes";
 
 export class DynamoDbAdapter implements AdapterInterface{
-    client: any;
+    private client: any;
     constructor(config:DynamoDBConfig){
         // TODO
+    }
+    count(): number {
+        throw new Error("Method not implemented.");
     }
 
     readOne() {
@@ -31,6 +34,7 @@ export class DynamoDbAdapter implements AdapterInterface{
     removeAll(): void {
         throw new Error("Method not implemented.");
     }
+
     getClient() {
         throw new Error("Method not implemented.");
     }
