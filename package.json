@@ -1,0 +1,20 @@
+{
+  "name": "cloud-db-adapter",
+  "version": "1.0.0",
+  "description": "An adapter for several supported cloud database clients and use across services with minimal code changes when switching between vendors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "'Cloud",
+    "Database'",
+    "'Database",
+    "Adapter'"
+  ],
+  "author": "Shehan Kulathilake",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
