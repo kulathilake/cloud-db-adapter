@@ -1,10 +1,10 @@
 export enum DatabaseType{
-    DYNAMODB = 'dynamo-db',
+    AWSDYNAMODB = 'dynamo-db',
     MYSQL2 = 'mysql2',
-    CLOUDFIRESTORE = 'cloud-firestore'
+    GCPFIRESTORE = 'cloud-firestore'
 }
 
-export type DynamoDBConfig = {
+export type AWSDynamoDBConfig = {
     aws_access_key_id: string;
     aws_secret_access_key: string;
     aws_region: string;
@@ -19,6 +19,6 @@ export type MySQL2Config = {
     mysql_pool: boolean;
 }
 
-export type CloudFirestoreConfig = {
+export type GCPFirestoreConfig = {
 
 }

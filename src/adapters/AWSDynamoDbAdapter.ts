@@ -1,9 +1,9 @@
 import { AdapterInterface } from "../interfaces/AdapterInterface";
-import { DynamoDBConfig } from "../types/ConfigurationTypes";
+import { AWSDynamoDBConfig } from "../types/ConfigurationTypes";
 
-export class DynamoDbAdapter implements AdapterInterface{
+export class AWSDynamoDbAdapter implements AdapterInterface{
     private client: any;
-    constructor(config:DynamoDBConfig){
+    constructor(config:AWSDynamoDBConfig){
         // TODO
     }
     count(): number {

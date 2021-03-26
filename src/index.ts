@@ -1,12 +1,18 @@
-import { DynamoDbAdapter } from "./adapters/DynamoDbAdapter";
+import { AWSDynamoDbAdapter } from "./adapters/AWSDynamoDbAdapter";
 import { AdapterInterface } from "./interfaces/AdapterInterface";
-import { CloudFirestoreConfig, DatabaseType, DynamoDBConfig, MySQL2Config} from "./types/ConfigurationTypes";
+import { 
+    DatabaseType,
+    GCPFirestoreConfig, 
+    AWSDynamoDBConfig, 
+    MySQL2Config
+} from "./types/ConfigurationTypes";
+
 
 class AdapterFactory{
     private type: DatabaseType;
-    private config: DynamoDBConfig | MySQL2Config | CloudFirestoreConfig;
+    private config: AWSDynamoDBConfig | MySQL2Config | GCPFirestoreConfig;
 
-    constructor(type: DatabaseType,config: DynamoDBConfig | MySQL2Config | CloudFirestoreConfig){
+    constructor(type: DatabaseType,config: AWSDynamoDBConfig | MySQL2Config | GCPFirestoreConfig){
         this.type = type;
         this.config = config;
     } 
@@ -14,11 +20,10 @@ class AdapterFactory{
             if (this.type === DatabaseType.MYSQL2) {
                 // TODO: Create and return MYSQL2 Adapter.
 
-            } else if (this.type === DatabaseType.DYNAMODB) {
+            } else if (this.type === DatabaseType.AWSDYNAMODB) {
+                return new AWSDynamoDbAdapter(this.config as AWSDynamoDBConfig);
 
-                return new DynamoDbAdapter(this.config as DynamoDBConfig);
-
-            } else if (this.type === DatabaseType.CLOUDFIRESTORE) {
+            } else if (this.type === DatabaseType.GCPFIRESTORE) {
 
                 // TODO: Create and return Cloud Firestore Adapter.
 
@@ -27,4 +32,6 @@ class AdapterFactory{
 
 }
 
+
 export default AdapterFactory;
+export {DatabaseType};
